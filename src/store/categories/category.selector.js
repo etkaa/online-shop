@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 
-//memoization of the results, so no need to re-render if 
+//memoization of the results, so no need to re-render if
 //input is same, because the output will be the same.
 
 const selectCategoryReducer = (state) => {
@@ -20,4 +20,9 @@ export const selectCategoriesMap = createSelector(
       acc[title.toLowerCase()] = items;
       return acc;
     }, {})
+);
+
+export const selectCategoriesIsLoading = createSelector(
+  [selectCategoryReducer],
+  (categoriesSlice) => categoriesSlice.isLoading
 );
