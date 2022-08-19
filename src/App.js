@@ -4,27 +4,16 @@ import Navigation from "./component/routes/navigation/Navigation";
 import Authentication from "./component/routes/authentication/Authentication";
 import Shop from "./component/routes/shop/Shop";
 import Checkout from "./component/routes/checkout/Checkout";
-import { setCurrentUser } from "./store/user/user.action";
-import { useDispatch } from "react-redux";
-
 import { Fragment, useEffect } from "react";
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-} from "./utils/firebase/firebase.utils.js";
+import { useDispatch } from "react-redux/es/exports";
 import Footer from "./component/footer/Footer";
+import { checkUserSession } from "./store/user/user.action";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener(async (user) => {
-      if (user) {
-        await createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-    return unsubscribe;
+    dispatch(checkUserSession());
   }, [dispatch]);
 
   return (
