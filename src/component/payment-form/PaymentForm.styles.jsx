@@ -9,8 +9,8 @@ export const PaymentFormContainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 800px) {
-    height: 150px;
-    min-width: 100px;
+    height: 100px;
+    min-width: 50px;
   }
 `;
 
