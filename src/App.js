@@ -6,8 +6,8 @@ import Shop from "./component/routes/shop/Shop";
 import Checkout from "./component/routes/checkout/Checkout";
 import { Fragment, useEffect } from "react";
 import { useDispatch } from "react-redux/es/exports";
-import Footer from "./component/footer/Footer";
 import { checkUserSession } from "./store/user/user.action";
+import { GlobalStyle } from "./global.styles";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <Fragment>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
@@ -26,7 +27,6 @@ const App = () => {
           <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
-      <Footer />
     </Fragment>
   );
 };

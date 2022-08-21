@@ -10,27 +10,27 @@ export const BackgroundImage = styled.div`
 
 export const Body = styled.div`
   height: 90px;
-  padding: 0 25px;
+  padding: 0px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  background-color: white;
-  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
 
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
     font-size: 22px;
-    color: #4a4a4a;
+    color: black;
     text-transform: uppercase;
   }
 
   p {
     font-weight: lighter;
     font-size: 16px;
+    color: black;
   }
 `;
 
@@ -64,5 +64,9 @@ export const DirectoryItemContainer = styled.div`
     &:last-child {
       margin-left: 7.5px;
     }
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
   }
 `;

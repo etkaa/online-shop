@@ -24,7 +24,6 @@ export const CartDropdownContainer = styled.div`
     ${InvertedButton} {
     margin-top: auto;
   }
-
 `;
 
 export const EmptyMessage = styled.span`

@@ -25,7 +25,9 @@ const Category = () => {
 
   return (
     <Fragment>
+      <div className="title-container">
       <h2 className="category-title">{category.toUpperCase()}</h2>
+      </div>
       {isLoading ? (
         <Spinner />
       ) : (
